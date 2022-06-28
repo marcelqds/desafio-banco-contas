@@ -1,1 +1,1 @@
-# desafio-banco-contas
+# desafio-contas-bancarias
