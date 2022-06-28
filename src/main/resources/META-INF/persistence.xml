@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="bco-dev"> <!-- transaction-type="RESOURCE_LOCAL" -->
+        <description>Persistencia com Hibernate</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>projeto.contas.Banco</class>
+        <class>projeto.contas.Cliente</class>
+        <class>projeto.contas.Conta</class>
+        <class>projeto.contas.ContaCorrente</class>
+        <class>projeto.contas.ContaPoupanca</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3309/db_banco"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="marcelo"/>
+            
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>  <!-- validate, create, update, create-drop -->
+        </properties>
+    </persistence-unit>
+</persistence>
